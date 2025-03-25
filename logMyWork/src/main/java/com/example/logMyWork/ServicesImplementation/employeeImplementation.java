@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.logMyWork.Entities.Employee;
-import com.example.logMyWork.Repositories.employeeRepo;
+import com.example.logMyWork.Repositories.EmployeeRepo;
 import com.example.logMyWork.Services.EmployeeService;
 
-public class employeeImplementation  implements EmployeeService{
+public class employeeImplementation implements EmployeeService {
 
     @Autowired
-    employeeRepo employeeRepo;
+    EmployeeRepo employeeRepo;
 
     @Override
     public Employee saveEmployee(Employee employee) {
@@ -21,7 +21,6 @@ public class employeeImplementation  implements EmployeeService{
 
     @Override
     public Optional<Employee> updateEmployee(Employee employee) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updateEmployee'");
     }
 
