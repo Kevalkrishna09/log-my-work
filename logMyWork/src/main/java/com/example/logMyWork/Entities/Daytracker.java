@@ -14,6 +14,7 @@ import java.util.List;
 public class Daytracker {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "daytracker_id")
     private Integer daytrackerId;
 

@@ -4,22 +4,30 @@ import java.util.Date;
 
 import com.example.logMyWork.Entities.Employee;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.TemporalType;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+
+
+@Getter
+@Setter
+@Data
 public class EmployeeAddForm {
+    private String name;
+
     private String designation;
 
  
-    private Integer teamId;
+    private Integer teamId; 
 
    
-    private Employee manager;
+    private Employee managerId;
 
 
     
+    private Date dateOfBirth;
 
     private Date joiningDate;
 

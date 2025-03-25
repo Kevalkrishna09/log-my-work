@@ -6,13 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.logMyWork.Entities.Employee;
-import com.example.logMyWork.Repositories.EmployeeRepo;
+import com.example.logMyWork.Repositories.EmployeRepo;
 import com.example.logMyWork.Services.EmployeeService;
 
 public class employeeImplementation implements EmployeeService {
 
     @Autowired
-    EmployeeRepo employeeRepo;
+    EmployeRepo employeeRepo;
 
     @Override
     public Employee saveEmployee(Employee employee) {

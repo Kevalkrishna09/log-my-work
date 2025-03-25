@@ -2,7 +2,7 @@ package com.example.logMyWork.Entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import scala.collection.immutable.List;
+import java.util.*;
 
 @Entity
 
@@ -28,6 +28,6 @@ public class Team {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "team")
     private List<Employee> employees;
 }

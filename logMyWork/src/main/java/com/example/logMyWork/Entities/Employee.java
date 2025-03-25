@@ -25,7 +25,7 @@ public class Employee {
     private String designation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "team_id")
+    @JoinColumn(name = "team_id")
     private Team team;
 
     @ManyToOne(fetch = FetchType.LAZY)
