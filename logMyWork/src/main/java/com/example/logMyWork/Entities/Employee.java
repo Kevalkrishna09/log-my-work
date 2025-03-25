@@ -1,7 +1,5 @@
 package com.example.logMyWork.Entities;
 
-
-
 import java.util.Date;
 
 import jakarta.persistence.*;
@@ -9,16 +7,15 @@ import lombok.*;
 
 @Entity
 
-@Table(name = "employee")  // Maps to the table name in the database
-@Getter
-@Setter
+@Table(name = "employee")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment strategy
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "emp_id")
     private Integer empId;
 
     @Column(name = "emp_name", nullable = false, length = 20)
@@ -27,11 +24,12 @@ public class Employee {
     @Column(name = "designation", length = 20)
     private String designation;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "team_id")
-    private Integer teamId;
+    private Team team;
 
-    @ManyToOne
-    @JoinColumn(name = "manager_id") // Self-referencing foreign key
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id")
     private Employee manager;
 
     @Column(name = "date_of_birth")
@@ -43,7 +41,6 @@ public class Employee {
     private Date joiningDate;
 
     @Column(name = "email", length = 30, unique = true)
-    
     private String email;
 
     @Column(name = "phone_number", length = 10)
