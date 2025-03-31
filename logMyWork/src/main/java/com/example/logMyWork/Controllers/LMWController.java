@@ -12,8 +12,6 @@ public class LMWController {
         // model.addAttribute("email",email);
 
         return "homeview";
-
     }
-
 }
 
