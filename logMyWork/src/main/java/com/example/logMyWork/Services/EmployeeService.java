@@ -8,7 +8,6 @@ import com.example.logMyWork.Entities.Employee;
 public interface EmployeeService {
     Employee saveEmployee(Employee employee);
   
-
     Optional<Employee> updateEmployee(Employee employee);
 
     void deleteEmployee(String email);
@@ -17,9 +16,7 @@ public interface EmployeeService {
 
     boolean employeeExist(String email);
 
-   
-
     List<Employee> getAllEmployees();
 
-   
+    Optional<Employee> getEmployeeById(int id);
 }
